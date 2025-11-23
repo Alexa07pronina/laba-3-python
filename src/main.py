@@ -1,20 +1,32 @@
-from src.power import power_function
-from src.constants import SAMPLE_CONSTANT
+from src.commands import commands
+def main():
+    """Основная функция обработки пользовательского ввода"""
+    print("Доступные команды:")
+    print("Математика: factorial <n>, factorial_recursive <n>, fibo <n>, fibo_recursive <n>")
+    print("Сортировки: bubble_sort, quick_sort, counting_sort, heap_sort, radix_sort, bucket_sort")
+    print("Генераторы: rand_int_array, nearly_sorted, reverse_sorted, rand_float_array, many_duplicates")
+    print("Структуры: stack <command> <arg>, queue <command> <arg>")
+    print("Выход: q, quit")
+    while True:
+        try:
+            line = input("\nВведите команду ").strip()
+            if line=='q' or line=='quit':
+                break
 
+            parts = line.split()
+            if parts and parts[0].isdigit():
+                parts = parts[1:]
 
-def main() -> None:
-    """
-    Обязательнная составляющая программ, которые сдаются. Является точкой входа в приложение
-    :return: Данная функция ничего не возвращает
-    """
+            if not parts:
+                continue
 
-    target, degree = map(int, input("Введите два числа разделенные пробелом: ").split(" "))
+            command = parts[0]
+            args = parts[1:]
+            commands(command,args)
 
-    result = power_function(target=target, power=degree)
+        except Exception as e:
+            print(f"Ошибка: {e}")
 
-    print(result)
-
-    print(SAMPLE_CONSTANT)
 
 if __name__ == "__main__":
     main()

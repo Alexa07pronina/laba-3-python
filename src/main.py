@@ -8,6 +8,7 @@ def main():
     print("Структуры: stack <command> <arg>, queue <command> <arg>")
     print("    stack: peek, pop, push <arg>, min, is_empty,__len__")
     print("    queue: front, dequeue, enqueue <arg>, is_empty,__len__")
+    print("Тайминг: timeit_once <sorting> <arr>")
     print("Выход: q, quit")
     while True:
         try:

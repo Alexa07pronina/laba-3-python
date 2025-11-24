@@ -2,6 +2,7 @@ import ast
 from src.data_structures import Stack, Queue
 from src.constants import func
 from src.generators import rand_int_array, nearly_sorted, reverse_sorted, rand_float_array,many_duplicates
+from src.benchmarks import timeit_once
 stack = Stack()
 queue = Queue()
 
@@ -149,6 +150,19 @@ def commands(command: str, args: list):
             if len(args) > 2:
                 seed = int(args[2])
             print(many_duplicates(n, k, seed))
+        except Exception as e:
+            print(f"Ошибка: {e}")
+    elif command == "timeit_once":
+        subcommand = args[0]
+        if len(args) < 2:
+            print("Использование: time_sort <алгоритм> <массив>")
+            print("Доступные алгоритмы: bubble, quick, counting, radix, bucket, heap")
+        arr_str = " ".join(args[1:])
+        try:
+            arr = ast.literal_eval(arr_str)
+            algo_func = func[subcommand]
+            time_taken = timeit_once(algo_func, arr)
+            print(f"Время выполнения {subcommand}: {time_taken:.10f} сек")
         except Exception as e:
             print(f"Ошибка: {e}")
     else:

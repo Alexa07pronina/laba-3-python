@@ -44,7 +44,8 @@ def counting_sort(a: list) -> list:
         count[num - min_val] += 1
 
     sorted_arr = []
-    for i, cnt in enumerate(count):
+    for i in range(len(count)):
+        cnt = count[i]
         sorted_arr.extend([i + min_val] * cnt)
 
     return sorted_arr

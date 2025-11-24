@@ -1,6 +1,8 @@
 def bubble_sort(a: list) -> list:
     """Пузырьковая сортировка"""
-
+    if not all(isinstance(x, (int, float)) for x in a):
+        if not all(isinstance(x, str) for x in a):
+            raise TypeError("Элементы должны быть одинакового типа")
     arr = a.copy()
     n = len(arr)
     for i in range(n):

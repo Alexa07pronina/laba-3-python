@@ -7,8 +7,8 @@ queue = Queue()
 
 def commands(command: str, args: list):
     if command in ["factorial", "factorial_recursive", "fibo", "fibo_recursive"]:
-        n = int(args[0])
-        print(func[command](n))
+            n = int(args[0])
+            print(func[command](n))
     elif command in ["bubble_sort", "quick_sort", "counting_sort", "heap_sort"]:
         arr = ast.literal_eval(args[0])
         print(func[command](arr))
@@ -72,6 +72,7 @@ def commands(command: str, args: list):
             print(f"Размер: {len(stack)}")
         elif subcommand == "len" and command == "queue":
             print(f"Размер: {len(queue)}")
+
         elif subcommand == "enqueue":
             if not subargs:
                 print("Ошибка: требуется значение для push")
@@ -132,7 +133,7 @@ def commands(command: str, args: list):
     elif command == "rand_float_array":
         try:
             size = int(args[0])
-            low, high = map(float, args[1:3])
+            low,high = map(float, args[1:3])
             seed = None
             if len(args) > 3:
                 seed = int(args[3])

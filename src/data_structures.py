@@ -58,7 +58,7 @@ class Stack:
         if len(self.min_stack)!=0:
             return self.min_stack[-1]
         else:
-            raise Exception("Пустой стек")
+            raise IndexError("Пустой стек")
 
 
 

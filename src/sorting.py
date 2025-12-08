@@ -47,7 +47,6 @@ def counting_sort(a: list) -> list:
     for i in range(len(count)):
         cnt = count[i]
         sorted_arr.extend([i + min_val] * cnt)
-
     return sorted_arr
 
 
@@ -66,7 +65,6 @@ def radix_sort(a: list, base: int = 10) -> list:
     while max_num // exp > 0:
         counting_sort_for_radix(arr, exp, base)
         exp *= base
-
     return arr
 
 
@@ -131,7 +129,7 @@ def bucket_sort(a: list, buckets: int | None = None) -> list:
 
 
 def insertion_sort(bucket):
-    """Сортировка вставками для небольших списков"""
+    """Сортировка вставками для небольших списков - вспомогательная для bucket sort"""
     for i in range(1, len(bucket)):
         key = bucket[i]
         j = i - 1
@@ -170,5 +168,4 @@ def heap_sort(arr: list) -> list:
     for i in range(n - 1, 0, -1):
         result[0], result[i] = result[i], result[0]
         heapify(result, i, 0)
-
     return result

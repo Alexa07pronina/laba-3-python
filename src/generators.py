@@ -35,7 +35,6 @@ def nearly_sorted(size: int, swaps: int, seed: Optional[int] = None) -> List[int
         random.seed(seed)
 
     arr = list(range(size))
-
     for _ in range(swaps):
         i, j = random.sample(range(size), 2)
         arr[i], arr[j] = arr[j], arr[i]
@@ -75,5 +74,4 @@ def many_duplicates(n: int, k_unique: int = 5, seed: Optional[int] = None) -> Li
         return []
     unique_values = random.sample(range(-n * 2, n * 2), k_unique)
     result = [random.choice(unique_values) for _ in range(n)]
-
     return result

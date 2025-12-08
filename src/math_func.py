@@ -1,5 +1,5 @@
 def factorial(n: int) -> int:
-    """Итеративный расчет факториала"""
+    """Итеративный подсчет факториала"""
     if n < 0:
         raise ValueError("n должно быть неотрицательным")
     result = 1
@@ -8,7 +8,7 @@ def factorial(n: int) -> int:
     return result
 
 def factorial_recursive(n: int) -> int:
-    """Рекурсивный расчет факториала"""
+    """Рекурсивный подсчет факториала"""
     if n < 0:
         raise ValueError("n должно быть неотрицательным")
     if n == 0 or n == 1:
@@ -16,7 +16,7 @@ def factorial_recursive(n: int) -> int:
     return n * factorial_recursive(n - 1)
 
 def fibo(n: int) -> int:
-    """Итеративный расчет числа Фибоначчи"""
+    """Итеративный подсчет числа Фибоначчи"""
     if n < 0:
         raise ValueError("n должно быть неотрицательным")
     a, b = 0, 1
@@ -25,7 +25,7 @@ def fibo(n: int) -> int:
     return a
 
 def fibo_recursive(n: int) -> int:
-    """Рекурсивный расчет числа Фибоначчи"""
+    """Рекурсивный подсчет числа Фибоначчи"""
     if n < 0:
         raise ValueError("n должно быть неотрицательным")
     if n == 0:

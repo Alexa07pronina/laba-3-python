@@ -1,15 +1,18 @@
 from src.commands import commands
 def main():
     """Основная функция обработки пользовательского ввода"""
+
     print("Доступные команды:")
     print("Математика: factorial <n>, factorial_recursive <n>, fibo <n>, fibo_recursive <n>")
-    print("Сортировки: bubble_sort <array>, quick_sort, counting_sort, heap_sort, radix_sort, bucket_sort")
-    print("Генераторы: rand_int_array <size> <low> <high> <optional seed>, nearly_sorted, reverse_sorted, rand_float_array, many_duplicates")
+    print("Сортировки: bubble_sort <array>, quick_sort <array>, counting_sort <array>, heap_sort <array>, "
+          "radix_sort <array> <optional base>, bucket_sort <array> <optional buckets>")
+    print("Генераторы: rand_int_array <size> <low> <high> <optional seed>, nearly_sorted <size> <swaps> <optional seed>,"
+          " reverse_sorted <size>, rand_float_array <size> <low> <high> <optional seed>, many_duplicates <size> <k_uniq> <optional seed>")
     print("Структуры: stack <command> <arg>, queue <command> <arg>")
-    print("    stack: peek, pop, push <arg>, min, is_empty,__len__")
-    print("    queue: front, dequeue, enqueue <arg>, is_empty,__len__")
+    print("    stack: peek, pop, push <arg>, min, is_empty,len")
+    print("    queue: front, dequeue, enqueue <arg>, is_empty,len")
     print("Тайминг: timeit_once <sorting> <arr>")
-    print("Выход: q, quit")
+    print("Выход: q, quit\n")
     while True:
         try:
             line = input("\nВведите команду ").strip()
